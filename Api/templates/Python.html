@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Python Page {% endblock %}
+
+{% block body %}
+    <style>
+.container-fluid{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThi4kwjvEuQcJaOZ7-Su8zR29CjXXdTFt2ag&s");
+}
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h3 class="text-center text-primary mt-5"><u>{{ python_title }}</u></h3>
+            {% if question %}
+                {% for que in question %}
+                    {% if que.language == "Python" %}
+                            <div class="card bg-primary p-3 mt-3">
+                                <div class="card-body">
+                                    <h3 class="text-white">{{ que.question }}</h3>
+                                    <p class="text-white"><textarea id="textarea">{{ que.answer }}</textarea></p>
+                                </div>
+                            </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+{% endblock %}

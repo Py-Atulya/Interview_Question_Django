@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}All Questions{% endblock %}</title>
+    <link rel ="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+<section>
+    <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'javascript' %}">JavaScript</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'python' %}">Python</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'react' %}">React</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'django' %}">Django</a>
+            </li>
+
+        </ul>
+    </div>
+    </nav>
+</section>
+{% block body %}
+{% endblock %}
+{##}
+{#<div class="container-fluid">#}
+{#    <div class="row">#}
+{#        <div class="col-sm-2"></div>#}
+{#        <div class="col-sm-8">#}
+{#            <h3 class="text-center text-primary mt-5"><u>{{ javascript_title }}</u></h3>#}
+{#            {% if question %}#}
+{#                {% for que in question %}#}
+{#                    {% if que.language == "JavaScript" %}#}
+{#                            <div class="card bg-primary p-3 mt-3">#}
+{#                                <div class="card-body">#}
+{#                                    <h3 class="text-white">{{ que.question }}</h3>#}
+{#                                    <p class="text-white"><textarea id="textarea">{{ que.answer }}</textarea></p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+{#                <h3 class="text-center text-primary mt-5"><u>{{ python_title }}</u></h3>#}
+{#                {% for que in question %}#}
+{#                    {% if que.language == "Python" %}#}
+{#                            <div class="card bg-primary p-3 mt-3">#}
+{#                                <div class="card-body">#}
+{#                                    <h3 class="text-white">{{ que.question }}</h3>#}
+{#                                    <p class="text-white"><textarea id="textarea" >{{ que.answer }}</textarea></p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+{#            {% else %}#}
+{#                <h3>Question Not Found</h3>#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <div class="col-sm-2"></div>#}
+{#    </div>#}
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Home Page {% endblock %}
+
+{% block body %}
+    <style>
+    a{
+        list-style-type:  none;
+    }
+    </style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-3 mt-5">
+                    {% if question %}
+                        <h3>JavaScript</h3>
+                {% for que in question %}
+                    {% if que.language == "JavaScript" %}
+                            <div class="card">
+                            <div class="card-header mt-3">
+                                <a href="{% url 'javascript' %}">{{ que.question }}</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                </div>
+                <div class="col-sm-3 mt-5">
+                    {% if question %}
+                        <h3>Python</h3>
+                {% for que in question %}
+                    {% if que.language == "Python" %}
+                            <div class="card">
+                            <div class="card-header mt-3">
+                                    {{ que.question }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                </div>
+                <div class="col-sm-3  mt-5">
+                    {% if question %}
+                        <h3>Django</h3>
+                {% for que in question %}
+                    {% if que.language == "Django" %}
+                            <div class="card">
+                            <div class="card-header mt-3">
+                                    {{ que.question }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                </div>
+                <div class="col-sm-3 mt-5">
+                    {% if question %}
+                        <h3>React</h3>
+                {% for que in question %}
+                    {% if que.language == "React" %}
+                            <div class="card">
+                            <div class="card-header mt-3">
+                                    {{ que.question }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+{% endblock %}
+
